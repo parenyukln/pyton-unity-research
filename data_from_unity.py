@@ -7,7 +7,7 @@ from sklearn.metrics import accuracy_score
 from sklearn.tree import DecisionTreeClassifier 
 from sklearn.model_selection import train_test_split
 
-UNITYDATA_FILE = 'python-ml/mock_unity_data.csv'
+UNITYDATA_FILE = 'python-ml/unity_data.csv'
 SCRIPTOUTPUT_FILE = 'python-ml/prepared_data.csv'
 
 # Собрынные данные из Unity (сырые: просто история)

@@ -1,4 +1,4 @@
-Id,Health,Distance_to_enemy,PetalLengthCm,PetalWidthCm,Action
+Id,Health,Distance_to_enemy,Destance_to_closest_shelter,Can_attack,Action
 15,5.8,4.0,1.2,0.2,Attack
 51,7.0,3.2,4.7,1.4,Hide
 52,6.4,3.2,4.5,1.5,Hide

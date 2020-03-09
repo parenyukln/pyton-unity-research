@@ -11,16 +11,19 @@ MODEL_FILE = 'model.pkl'
 
 # Загрузка обученной модели 
 import joblib
+import numpy as np
 
 DTC_model = joblib.load(MODEL_FILE)
 
 # Prediction
-import numpy as np
-mock_unity_data_to_predict = [6.5,3.0,5.5,1.8] # Typical array of floats
+class RecognizeModel():
+    def __init__(self, data_from_unity):
+        self.data_to_recognize = data_from_unity
 
-array_dimention = len(mock_unity_data_to_predict)
-prepared_unity_data = np.ndarray((array_dimention,), buffer=np.array(mock_unity_data_to_predict), dtype=float) # Special ndarray type
-X_normalized = preprocessing.normalize([prepared_unity_data], norm='l2')
-DTC_prediction = DTC_model.predict(X_normalized)
+    def recognize(self):
+        array_dimention = len(self.data_to_recognize)
+        prepared_unity_data = np.ndarray((array_dimention,), buffer=np.array(self.data_to_recognize), dtype=float) # Special ndarray type
+        X_normalized = preprocessing.normalize([prepared_unity_data], norm='l2')
+        DTC_prediction = DTC_model.predict(X_normalized)
 
-print(DTC_prediction)
+        return DTC_prediction
