@@ -6,18 +6,17 @@ from sklearn.metrics import accuracy_score
 from sklearn.tree import DecisionTreeClassifier 
 from sklearn.model_selection import train_test_split
 from sklearn import preprocessing
-
-MODEL_FILE = 'model.pkl'
+import config
 
 # Загрузка обученной модели 
 import joblib
 import numpy as np
 
-DTC_model = joblib.load(MODEL_FILE)
+DTC_model = joblib.load(config.MODEL_FILE)
 
 # Prediction
 class RecognizeModel():
-    def __init__(self, data_from_unity):
+    def __init__(self, data_from_unity, target_parameter_name):
         self.data_to_recognize = data_from_unity
 
     def recognize(self):
