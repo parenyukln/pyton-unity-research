@@ -14,7 +14,7 @@ data.drop('Id', axis=1, inplace=True)
 # ".iloc" принимает row_indexer, column_indexer  
 X = data.iloc[:,:-1].values  
 # Параметр, который классифицируем
-y = data['Action'] 
+y = data[config.ACTION_DATASET_NAME] 
 
 # Normalize
 X_normalized = preprocessing.normalize(X, norm='l2')
